@@ -14,10 +14,15 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "dev": "docz dev",
+    "build:doc": "rimraf doc-site && docz build",
+    "preview:doc": "docz serve" ,
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "commit": "git-cz"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +44,21 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.6",
-    "@types/react-dom": "^17.0.5"
+    "@types/react-dom": "^17.0.5",
+    "docz": "^2.3.1",
+    "gatsby-plugin-less": "^5.5.0",
+    "less": "^4.1.1",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
