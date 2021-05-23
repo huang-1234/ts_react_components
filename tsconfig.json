@@ -1,5 +1,11 @@
-/* {
+{
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "happy-ui": ["components/index.ts"],
+      "happy-ui/esm/*": ["components/*"],
+      "happy-ui/lib/*": ["components/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -18,18 +24,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react",
   },
   "include": [
     "src", 
-    "gatsby-config.js"  
-  ]
+    "gatsby-config.js" ,
+    "components"  
+  ],
+  "exclude": ["node_modules",  "**/demo/**"]
 }
- */
 
+
+/* 
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react",
@@ -45,3 +54,4 @@
   "ignore_include": "global.d.ts",
   "exclude": ["node_modules"]
 }
+ */
